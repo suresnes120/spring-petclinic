@@ -1,0 +1,17 @@
+name: 'Custom Greeting Action'
+description: 'Construit une salutation personnalisée et la définit en output'
+inputs:
+  username:
+    description: 'Le nom de la personne à saluer'
+    required: true
+    default: 'World'
+  greeting:
+    description: 'Le type de salutation (ex: Hello, Bonjour)'
+    required: true
+    default: 'Hello'
+outputs:
+  message:
+    description: 'La phrase de salutation complète'
+runs:
+  using: 'node20'
+  main: 'index.js'

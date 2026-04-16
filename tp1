@@ -1,0 +1,13 @@
+ssh-keygen -t ed25519 -C "suresnes120@gmail.com"
+
+git config --global user.name "suresnes120"
+git config --global user.email "suresnes120@gmail.com"
+git config --global init.defaultBranch main
+git config --global --list
+
+echo 'export GITHUB_USER="suresnes120"' > ~/gitops.env
+
+
+git add .github/workflows/blank.yml
+git commit -m "Ajout d'un premier workflow"
+git push

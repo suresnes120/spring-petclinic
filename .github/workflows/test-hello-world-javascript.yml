@@ -1,0 +1,20 @@
+name: Test Local Action
+on: [push, workflow_dispatch]
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Greeting Action
+        id: hello
+        uses: ./.github/actions/hello-world-javascript
+        with:
+          username: Developpeur
+          greeting: Bienvenue
+
+      - name: Check Output
+        run: |
+          echo "Le message généré était : ${{ steps.hello.outputs.message }}"
